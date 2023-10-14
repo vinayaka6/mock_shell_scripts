@@ -1,0 +1,16 @@
+#!/bin/bash
+src_path="/home/ec2-user/shells/"
+dst_path="/home/ec2-user/shells/dir2"
+
+for file in $src_path/*
+do
+if [ -f $file ];
+then
+line_count=$(wc -l < $file)
+if [ $line_count -gt 10 ];
+then
+mv $file $dst_path
+echo "$file moved to $dst_path"
+fi
+fi
+done
