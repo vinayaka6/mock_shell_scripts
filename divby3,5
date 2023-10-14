@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+for i in $(seq 1 10);
+do
+        if (( $i % 3 == 0 )) && (( $i %5 ==0 ));
+        then
+                echo $i true and false
+
+        elif (( $i % 3 == 0 ));
+        then
+                echo $i true
+        elif  (( $i % 5 == 0 ));
+        then
+                echo $i false
+        else
+                echo $i true or false
+        fi
+done
