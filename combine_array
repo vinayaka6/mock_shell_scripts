@@ -1,1 +1,9 @@
+#!/bin/bash
 
+array1=( "pen" "bat" "cat" )
+array2=( "ball" "drop" "scale" )
+
+combined_array=( "${array1[@]}" "${array2[@]}" )
+sorted_array=$(printf "%s\n" "${combined_array[@]}" | sort)
+
+echo "sorted array in ascending order:$sorted_array"
