@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Enter the IP to check:"
+read -r input
+
+IFS='.' read -ra parts <<< "$input"
+if [ "${#parts[@]}" -ne 4 ]; then
+    echo "Invalid IP"
+    exit 1
+fi
+
+for i in "${parts[@]}"; do
+    if ! [[ $i =~ ^[0-9]+$ ]] || [ "$i" -lt 0 ] || [ "$i" -gt 255 ]; then
+        echo "Invalid IP"
+        exit 1
+    fi
+done
+
+echo "Valid IP"
