@@ -1,0 +1,6 @@
+#!/bin/bash
+path="/home/ec2-user/shells/dir2"
+for file in $path/*
+do
+        mv $file "$file.new"
+done
